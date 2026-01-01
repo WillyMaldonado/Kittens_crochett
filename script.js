@@ -45,7 +45,7 @@ const products = [
     },
     {
         name: "Lola Bunny",
-        price: "Q600",
+        price: "Q1000",
         image: "images/product3.jpeg",
         description: "Lola Bunny bebé creada en época navideña con materiales chenille y rabbit.",
         message: "Hola, me interesa Lola Bunny",
@@ -105,3 +105,27 @@ if (hamburger && navMenu) {
         });
     });
 }
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Active state
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            const tags = Array.from(card.querySelectorAll('.tag'))
+                .map(tag => tag.textContent.toLowerCase());
+
+            if (filter === 'all' || tags.includes(filter)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
