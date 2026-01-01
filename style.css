@@ -323,3 +323,32 @@ footer{
         font-size: 2rem;
     }
 }
+
+.tags{
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag{
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: var(--color-white);
+}
+
+.tag-nuevo{
+    background-color: #4CAF50;
+}
+
+.tag-personalizado{
+    background-color: #ff69b4;
+}
+
+.tag-más-vendido,
+.tag-mas-vendido{
+    background-color: #ff9800;
+}
